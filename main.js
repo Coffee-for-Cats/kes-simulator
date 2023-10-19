@@ -17,29 +17,34 @@ function getAssemblyLines() {
   return input.value.split('\n');
 }
 
+function step() {
+  mainMemory = getAssemblyLines();
+  const line = mainMemory[RC];
+
+  try {
+    match(line);
+  } catch {
+    error();
+  }
+  RC++;
+
+  // To do:
+  // Atualizar a textarea usando o mainMemory.
+  input.value = mainMemory
+    .toString()
+    .replace(/,/g, '\n')
+    .toUpperCase()
+
+  console.log(`RC: ${RC} | R0: ${registers.R0} R1: ${registers.R1} R2: ${registers.R2} R3: ${registers.R3}`);
+}
+
 async function execute() {
-  RC = 0;
   mainMemory = getAssemblyLines()
 
   while (RC <= 31) {
-    const line = mainMemory[RC];
-
-    //
-    try {
-      match(line);
-    } catch {
-      error();
-    }
-
-    // To do:
-    // Atualizar a textarea usando o mainMemory.
-    input.value = mainMemory
-      .toString()
-      .replace(/,/g, '\n')
-      .toUpperCase()
-
-    console.log(`RC: ${RC} | R0: ${registers.R0} R1: ${registers.R1} R2: ${registers.R2} R3: ${registers.R3}`);
+    step();
   }
+  RC = 0;
 }
 
 function match(l) {
@@ -47,7 +52,7 @@ function match(l) {
   
   // pega o comenado principal.
   const command = line.split(' ')[0];
-  // pega todo o resto.
+  // pega todo o resto, vulgo argumentos.
   const values = line.split(' ').slice(1);
   
   switch (command.toUpperCase()) {
@@ -57,7 +62,7 @@ function match(l) {
       break;
     }
     case 'NOP': {
-      console.log("NOPED!");
+      console.log("Noped!");
       break;
     }
     case 'LOAD': {
@@ -132,7 +137,6 @@ function match(l) {
       error()
     }
   }
-  RC++;
 }
 
 function error() {
