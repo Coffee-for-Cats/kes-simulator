@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  padding: 0; margin: 0;
+  background-color: #f0f0f0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  margin: 2rem 0 .2rem 0;
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+}
+
+.editor {
+  display: flex;
+  padding: .4rem;
+  padding-bottom: 4rem;
+  border: 2px solid #0f0f0f;
+  font-family: monospace;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  padding-left: .4rem;
+  margin-left: .2rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.line-numbers span {
+  counter-increment: lineNumber;
+  text-align: right;
+}
+
+.line-numbers span::before {
+  content: counter(lineNumber);
+  display: block;
+  font-size: 1rem;
+}
+
+.line-numbers span:first-of-type::before {
+  counter-set: lineNumber 0;
+}
+
+.execute {
+  display: block;
+  width: auto;
+  position: fixed;
+  bottom: 6px;
+  padding: 2px;
+  margin: 2px;
+  background: #f0f0f0;
+}
+
+.execute button {
+  pointer-events: all;
+  cursor: pointer;
+  padding: .6rem;
+  margin: 0 2px;
+  font-size: 1.2rem;
+  border: 2px solid #0f0f0f;
+  float: right;
+}

@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador K&S</title>
-  <script src="main.js" defer></script>
+  <script src="./main.js" defer></script>
+  <script src="./appearance.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <style>
-    textarea {
-      resize: none;
-    }
-  </style>
-  <textarea name="assembly-input" id="input" cols="30" rows="32"></textarea>
-  <button onclick="execute()">Execute</button>
-  <button onclick="step()">Next</button>
+  <main>
+    <div class="editor">
+      <div class="line-numbers">
+      </div>
+      <textarea name="assembly-input" id="input" cols="30" rows="32"></textarea>
+    </div>
+    
+    <div class="execute">
+      <button onclick="execute()">Execute</button>
+      <button onclick="step()">Next</button>
+    </div>
+  </main>
 </body>
 </html>
