@@ -1,6 +1,7 @@
 const input = document.getElementById("input");
 
-let mainMemory = [];
+let mainMemory = Array(32);
+Object.seal(mainMemory);
 const registers = {
   'R0': '',
   'R1': '',
@@ -140,6 +141,7 @@ function match(l) {
 }
 
 function error() {
+  addErrorIndicator(RC);
   throw new Error(`Problema na linha ${RC}`);
 }
 

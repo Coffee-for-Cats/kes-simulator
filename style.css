@@ -4,6 +4,10 @@
   background-color: #f0f0f0;
 }
 
+:root {
+  --font-size: 1rem;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -32,8 +36,10 @@ textarea {
   border: none;
   padding-left: .4rem;
   margin-left: .2rem;
-  font-size: 1rem;
+  font-size: var(--font-size);
   outline: none;
+  max-height: 38rem;
+  resize: none;
 }
 
 .line-numbers span {
@@ -44,7 +50,13 @@ textarea {
 .line-numbers span::before {
   content: counter(lineNumber);
   display: block;
-  font-size: 1rem;
+  padding: 0 .2rem;
+  border-radius: .2rem;
+  font-size: var(--font-size);
+}
+
+.line-numbers span.invalid::before {
+  background-color: red;
 }
 
 .line-numbers span:first-of-type::before {
