@@ -159,7 +159,7 @@ function validateMem(...mems) {
 
 function validateRecursion() {
   callstack++;
-  if (callstack > 200) {
+  if (callstack > 1200) {
     alert("Você criou um loop longo de mais! Programa parado.");
     callstack = 0;
     error()
