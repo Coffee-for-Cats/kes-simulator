@@ -12,12 +12,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-width: 100%;
   min-height: 100vh;
 }
 
+#var-placer {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  border: 2px solid #0f0f0f;
+}
+
 main {
-  margin: 2rem 0 .2rem 0;
+  margin: 1rem 0 .2rem 0;
   display: flex; 
   justify-content: center;
   flex-direction: column;
@@ -59,17 +66,21 @@ textarea {
   background-color: red;
 }
 
+.line-numbers span.executing::before {
+  background-color: blue;
+}
+
 .line-numbers span:first-of-type::before {
   counter-set: lineNumber 0;
 }
 
 .execute {
-  display: block;
+  display: flex; align-items: center;
   width: auto;
   position: fixed;
   bottom: 6px;
   padding: 2px;
-  margin: 2px;
+  margin: 2px 0 0 6rem;
   background: #f0f0f0;
 }
 

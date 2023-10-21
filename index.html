@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador K&S</title>
-  <script src="./main.js" defer></script>
-  <script src="./appearance.js" defer></script>
-  <link rel="stylesheet" href="./style.css">
+  <script src="./src/main.js" defer></script>
+  <script src="./src/appearance.js" defer></script>
+  <script src="./src/interpreter.js" defer></script>
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
+  <header id="var-placer">
+    RC: 0 | ALU: 0 | R0: 0 R1: 0 R2: 0 R3: 0
+  </header>
   <main>
     <div class="editor">
       <div id="line-numbers" class="line-numbers">
@@ -17,8 +21,10 @@
     </div>
     
     <div class="execute">
-      <button onclick="execute()">Execute</button>
-      <button onclick="step()">Next</button>
+      <button onclick="stepOnce()"> &#9199; </button>
+      <button onclick="startWalking()"> &gt; </button>
+      <button onclick="execute()"> &gt;&gt; </button>
+      <button onclick="reset()"> &#8630; </button>
     </div>
   </main>
 </body>

@@ -3,10 +3,10 @@ const input = document.getElementById("input");
 let mainMemory = Array(32);
 Object.seal(mainMemory);
 const registers = {
-  'R0': '',
-  'R1': '',
-  'R2': '',
-  'R3': ''
+  'R0': 0,
+  'R1': 0,
+  'R2': 0,
+  'R3': 0
 };
 Object.seal(registers);
 let RC = 0;
@@ -14,12 +14,12 @@ let ALU = 0;
 
 let callstack = 0;
 
-function getAssemblyLines() {
-  return input.value.split('\n');
-}
-
 function step() {
   mainMemory = getAssemblyLines();
+
+  // adiciona um marcador azul à linha sendo executada.
+  updateExecLine();
+
   const line = mainMemory[RC];
 
   try {
@@ -27,6 +27,7 @@ function step() {
   } catch {
     error();
   }
+
   RC++;
 
   // To do:
@@ -34,32 +35,27 @@ function step() {
   input.value = mainMemory
     .toString()
     .replace(/,/g, '\n')
-    .toUpperCase()
-
-  console.log(`RC: ${RC} | R0: ${registers.R0} R1: ${registers.R1} R2: ${registers.R2} R3: ${registers.R3}`);
+    .toUpperCase();
+  
+  updateVarPlacer();
 }
 
-async function execute() {
-  mainMemory = getAssemblyLines()
-
-  while (RC <= 31) {
-    step();
-  }
-  RC = 0;
+function getAssemblyLines() {
+  return input.value.split('\n');
 }
 
 function match(l) {
   const line = l.toUpperCase();
-  
+
   // pega o comenado principal.
   const command = line.split(' ')[0];
   // pega todo o resto, vulgo argumentos.
   const values = line.split(' ').slice(1);
-  
+
   switch (command.toUpperCase()) {
     case 'HALT': {
       console.log("Halted!");
-      RC = 32;
+      RC = 31;
       break;
     }
     case 'NOP': {
@@ -80,7 +76,7 @@ function match(l) {
     }
     case 'STORE': {
       const [mem, reg] = values;
-      validateMem(mem);  validadeReg(reg);
+      validateMem(mem); validadeReg(reg);
       mainMemory[mem] = registers[reg];
       break;
     }
@@ -141,6 +137,7 @@ function match(l) {
 }
 
 function error() {
+  // adiciona uma marcação na linha onde há erro.
   addErrorIndicator(RC);
   throw new Error(`Problema na linha ${RC}`);
 }
