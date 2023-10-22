@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0; margin: 0;
   background-color: #f0f0f0;
+  font-family: monospace;
 }
 
 :root {
@@ -35,7 +36,6 @@ main {
   padding: .4rem;
   padding-bottom: 4rem;
   border: 2px solid #0f0f0f;
-  font-family: monospace;
 }
 
 textarea {
