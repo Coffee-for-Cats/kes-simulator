@@ -17,14 +17,21 @@
     <div class="editor">
       <div id="line-numbers" class="line-numbers">
       </div>
-      <textarea name="assembly-input" id="input" cols="30" rows="32"></textarea>
+      <textarea 
+        name="assembly-input" id="input"
+        cols="30" rows="32"
+        spellcheck="false"
+      ></textarea>
     </div>
     
     <div class="execute">
-      <button onclick="stepOnce()"> &#9199; </button>
-      <button onclick="startWalking()"> &gt; </button>
-      <button onclick="execute()"> &gt;&gt; </button>
-      <button onclick="reset()"> &#8630; </button>
+      <div class="buttons">
+        <button onclick="stepOnce()"> &#x23EF; </button>
+        <button onclick="play()"> &#x23F5; </button>
+        <button onclick="execute()"> &#x23ED; </button>
+        <button onclick="reset()"> &#10226; </button>
+      </div>
+      <input type="range" name="speed" id="speed" min="0" max="1800">
     </div>
   </main>
 </body>
