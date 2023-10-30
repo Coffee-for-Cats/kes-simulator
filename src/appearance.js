@@ -33,5 +33,5 @@ const varPlacer = document.getElementById("var-placer");
 
 function updateVarPlacer() {
   varPlacer.innerText =
-    `RC: ${RC} | ALU: ${ALU || 0} | R0: ${registers.R0 || 0} R1: ${registers.R1 || 0} R2: ${registers.R2 || 0} R3: ${registers.R3 || 0}`;
+    `PC: ${RC} | ALU: ${ALU || 0} | R0: ${registers.R0 || 0} R1: ${registers.R1 || 0} R2: ${registers.R2 || 0} R3: ${registers.R3 || 0}`;
 }
