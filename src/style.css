@@ -82,7 +82,7 @@ textarea {
   bottom: 6px;
   padding: 2px;
   margin: 2px 0 0 5rem;
-  background: #f0f0f0;
+  /* background: #f0f0f0; */
 }
 
 .execute > * > button {
