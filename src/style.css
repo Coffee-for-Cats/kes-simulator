@@ -10,6 +10,11 @@
   --font-size: 1rem;
 }
 
+address {
+  opacity: .8;
+  margin-top: 1.2rem;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -42,11 +47,11 @@ main {
 textarea {
   resize: none;
   border: none;
-  padding-left: .4rem;
+  padding: 0 .4rem 0 .4rem;
   margin-left: .2rem;
   font-size: var(--font-size);
   outline: none;
-  /* max-height: 38rem; */
+  background: #eaeaea; border-radius: .2rem;
   resize: none;
 }
 
@@ -81,8 +86,11 @@ textarea {
   position: fixed;
   bottom: 6px;
   padding: 2px;
-  margin: 2px 0 0 5rem;
   /* background: #f0f0f0; */
+}
+
+.buttons {
+  display: flex;
 }
 
 .execute > * > button {
@@ -92,5 +100,7 @@ textarea {
   margin: 0 2px;
   font-size: 1.2rem;
   border: 2px solid #0f0f0f;
-  float: right;
+
+  display: flex;
+  align-items: center; justify-content: center;
 }

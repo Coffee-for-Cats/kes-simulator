@@ -27,16 +27,24 @@
         spellcheck="false"
       ></textarea>
     </div>
-    
-    <div class="execute">
-      <div class="buttons">
-        <button title="próxima linha" onclick="stepOnce()"> &#x23EF; </button>
-        <button title="executar linha a linha" onclick="play()"> &#x23F5; </button>
-        <button title="executar tudo de uma vez" onclick="execute()"> &#x23ED; </button>
-        <button title="resetar variáveis" onclick="reset()"> &#10226; </button>
-      </div>
-      <input type="range" name="speed" id="speed" min="0" max="1800">
-    </div>
   </main>
+    
+  <div class="execute">
+    <div class="buttons">
+      <button title="Resetar" onclick="reset()">
+        <img src="./src/icons/refresh.svg" alt="Resetar">
+      </button>
+      <button title="Próximo" onclick="stepOnce()">
+        <img src="./src/icons/skip_next.svg" alt="Próximo">
+      </button>
+      <button title="Rodar" onclick="play()">
+        <img src="./src/icons/play_arrow.svg" alt="Rodar">
+      </button>
+      <button title="Pular para o fim" onclick="execute()">
+        <img src="./src/icons/fast_forward.svg" alt="Executar">
+      </button>
+    </div>
+    <input type="range" name="speed" id="speed" min="0" max="1800">
+  </div>
 </body>
 </html>
