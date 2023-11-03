@@ -46,7 +46,7 @@ textarea {
   margin-left: .2rem;
   font-size: var(--font-size);
   outline: none;
-  max-height: 38rem;
+  /* max-height: 38rem; */
   resize: none;
 }
 
