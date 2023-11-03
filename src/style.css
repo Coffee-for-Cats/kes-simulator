@@ -68,7 +68,7 @@ textarea {
 }
 
 .line-numbers span.invalid::before {
-  background-color: red;
+  background-color: red !important;
 }
 
 .line-numbers span:first-of-type::before {
