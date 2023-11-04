@@ -11,3 +11,5 @@ It's an assembly-like language created for learning purposes. There was already 
   ### Drawbacks:
   - Can't really see the circuit working.
   - Is hosted by me.
+
+`All the code was written and hosted by me on first semester.`
