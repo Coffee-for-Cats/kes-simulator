@@ -1,5 +1,5 @@
 # K&S
-It's a assembly-like language created for learning purposes. There was already an complex interpreter, but the dificulty of use inspired me to build this site.
+It's an assembly-like language created for learning purposes. There was already an complex interpreter, but the dificulty of use inspired me to build this site.
 
 ## Why this exists
   ### Advantages:
