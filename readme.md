@@ -23,3 +23,6 @@ Após testarmos, aperfeiçoei o projeto e apresentei para a professora da matér
 O projeto já foi utilizado no semestre de 2024/1, no ensino online.
 
 Graças a essa professora consegui uma bolsa (SSP) e consegui me manter nos estudos.
+
+## Projeto original
+https://users.dickinson.edu/~braught/kands/KandS2/machine.html
