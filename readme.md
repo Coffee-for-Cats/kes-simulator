@@ -1,15 +1,25 @@
 # K&S
-It's an assembly-like language created for learning purposes. There was already an complex interpreter, but the dificulty of use inspired me to build this site.
+"Key and Switch" é um computador teórico utilizado para o aprendizado sobre arquitetura de computadores.
+O Simulador deste repositório interpreta o código (em texto) e executa as operações de maneira muito similar ao original.
+Tal implementação é atualmente utilizada para o ensino da primeira linguagem ASM do curso de Engenharia de Computação, na UERGS em Guaíba/RS.
 
-## Why this exists
-  ### Advantages:
-  - Copy/Paste (usefull if the teacher wants to run your code).
-  - Faster and Instant execution options.
-  - Avaliability on Mobile.
-  - Corrected input bug (you needed to refresh the page randomly, having to rewrite your code each time).
+## Por que isso existe?
+Já existe um simulador online, porém vários problemas de usabilidade dificultavam o ensino do K&S.
+  ### Vantagens:
+  - Editor Multi-linha; permitindo copy/paste e manutenção do código.
+  - Funcionalidades de Execução mais rápida e instantânea.
+  - Disponível em celulares móveis.
+  - Problemas de input e crashes corrigidos.
 
-  ### Drawbacks:
-  - Can't really see the circuit working.
-  - Is hosted by me.
+  ### Desvantagens:
+  - Não simula de fato todo o circuito, apenas interpreta o código.
+  - Não é software oficial de nenhuma faculdade ou instituição.
+      -> Sinta-se livre para copiar e modificar, apenas mantenha gratuito; agradeço se manter meu nome no readme.
+  - Algumas proxys bloqueiam as URL's da Vercel.
 
-`All the code was written and hosted by me on first semester.`
+## Processo de desenvolvimento e testagem
+Quando criei esse projeto, apresentei primeiramente para o monitor da matéria (Arquitetura de Computadores I).
+Após testarmos, aperfeiçoei o projeto e apresentei para a professora da matéria (Adriane Parraga), que gostou da iniciativa e resolveu utilizá-lo no ensino.
+O projeto já foi utilizado no semestre de 2024/1, no ensino online.
+
+Graças a essa professora consegui uma bolsa (SSP) e consegui me manter nos estudos.
