@@ -1,5 +1,5 @@
 # K&S
-"Key and Switch" é um computador teórico utilizado para o aprendizado sobre arquitetura de computadores.
+"Knob and Switch" é um computador teórico utilizado para o aprendizado sobre arquitetura de computadores.
 O Simulador deste repositório interpreta o código (em texto) e executa as operações de maneira muito similar ao original.
 Tal implementação é atualmente utilizada para o ensino da primeira linguagem ASM do curso de Engenharia de Computação, na UERGS em Guaíba/RS.
 
