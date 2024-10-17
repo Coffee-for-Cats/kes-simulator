@@ -32,10 +32,10 @@ function walk() {
 }
 
 function reset() {
-  registers['R0'] = 0;
-  registers['R1'] = 0;
-  registers['R2'] = 0;
-  registers['R3'] = 0;
+  registers.R0 = 0;
+  registers.R1 = 0;
+  registers.R2 = 0;
+  registers.R3 = 0;
 
   RC = 0;
   ALU = 0;

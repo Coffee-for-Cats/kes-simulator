@@ -53,6 +53,7 @@ function match(l) {
   const values = line.split(' ').slice(1);
 
   switch (command.toUpperCase()) {
+    // EXTRAS + MOVES
     case 'HALT': {
       console.log("Halted!");
       RC = 31;
@@ -65,7 +66,7 @@ function match(l) {
     case 'LOAD': {
       const [reg, mem] = values;
       validadeReg(reg); validateMem(mem);
-      registers[reg] = parseInt(mainMemory[mem]);
+      registers[reg] = Number.parseInt(mainMemory[mem]);
       break;
     }
     case 'MOVE': {
@@ -80,6 +81,7 @@ function match(l) {
       mainMemory[mem] = registers[reg];
       break;
     }
+    // MATH
     case 'ADD': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
@@ -98,20 +100,24 @@ function match(l) {
     case 'AND': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
-      ALU = registers[reg2] == 1 && registers[reg3] == 1;
+      const truey = registers[reg2] === 1 && registers[reg3] === 1; 
+      ALU = truey ? 1 : 0;
       registers[reg1] = ALU;
       break;
     }
     case 'OR': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
-      ALU = registers[reg2] == 1 || registers[reg3] == 1;
+      const truey = registers[reg2] === 1 || registers[reg3] === 1;
+      ALU = truey ? 1 : 0;
       registers[reg1] = ALU;
       break;
     }
+    // BRANCHES
     case 'BRANCH': {
       validateRecursion();
       const [mem] = values;
+      if(mem === true) mem = 1;
       validateMem(mem);
       RC = mem - 1;
       break;
@@ -119,6 +125,7 @@ function match(l) {
     case 'BZERO': {
       validateRecursion();
       const [mem] = values;
+      if(mem === true) mem = 1;
       validateMem(mem);
       if (ALU == 0) RC = mem - 1;
       break;
@@ -126,6 +133,7 @@ function match(l) {
     case 'BNEG': {
       validateRecursion();
       const [mem] = values;
+      if(mem === true) mem = 1;
       validateMem(mem);
       if (ALU < 0) RC = mem - 1;
       break;
@@ -143,7 +151,6 @@ function error() {
 }
 
 function validadeReg(...regs) {
-  // console.log(regs);
   regs.forEach(reg => {
     if (!(reg == 'R0' || reg == 'R1' || reg == 'R2' || reg == 'R3')) {
       error()
