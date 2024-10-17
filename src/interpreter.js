@@ -100,7 +100,7 @@ function match(l) {
     case 'AND': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
-      const truey = registers[reg2] === 1 && registers[reg3] === 1; 
+      const truey = registers[reg2] == 1 && registers[reg3] == 1; 
       ALU = truey ? 1 : 0;
       registers[reg1] = ALU;
       break;
@@ -108,7 +108,7 @@ function match(l) {
     case 'OR': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
-      const truey = registers[reg2] === 1 || registers[reg3] === 1;
+      const truey = registers[reg2] == 1 || registers[reg3] == 1;
       ALU = truey ? 1 : 0;
       registers[reg1] = ALU;
       break;
@@ -117,7 +117,7 @@ function match(l) {
     case 'BRANCH': {
       validateRecursion();
       const [mem] = values;
-      if(mem === true) mem = 1;
+      if(mem === true) error();
       validateMem(mem);
       RC = mem - 1;
       break;
@@ -125,15 +125,15 @@ function match(l) {
     case 'BZERO': {
       validateRecursion();
       const [mem] = values;
-      if(mem === true) mem = 1;
+      if(mem == true) mem = 1;
       validateMem(mem);
-      if (ALU == 0) RC = mem - 1;
+      if (ALU == 0 || ALU == false) RC = mem - 1;
       break;
     }
     case 'BNEG': {
       validateRecursion();
       const [mem] = values;
-      if(mem === true) mem = 1;
+      if(mem == true) mem = 1;
       validateMem(mem);
       if (ALU < 0) RC = mem - 1;
       break;
