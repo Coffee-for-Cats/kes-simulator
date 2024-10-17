@@ -101,9 +101,9 @@ function match(l) {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
       // const truey = registers[reg2] == 1 && registers[reg3] == 1; 
-      const truey = AND_OP(registers[reg2], registers[reg3]);
-      ALU = truey ? 1 : 0;
-      registers[reg1] = ALU;
+      const value = AND_OP(registers[reg2], registers[reg3]);
+      ALU = value > 0 ? 1 : 0;
+      registers[reg1] = value;
       break;
     }
     case 'OR': {
@@ -184,17 +184,12 @@ function AND_OP(number1, number2) {
   const binary1 = int1.toString(2).padStart(16, '0')
   const binary2 = int2.toString(2).padStart(16, '0')
   
-  let returning = false;
+  let returning = "";
   for(let i = 0; i < binary1.length; i++) {
-    console.log(binary1[i], binary2[i])
-    if(binary1[i] == '1') {
-      if(binary2[i] == '1') {
-        returning = true;
-      } else returning = false; 
-    }
+    returning +=
+      binary1[i] === '1' && binary2[i] === '1' ? '1' : '0';
   }
 
-  console.log(binary1, binary2, returning)
-
-  return returning;
+  console.log(returning)
+  return Number.parseInt(returning, 2);
 }
