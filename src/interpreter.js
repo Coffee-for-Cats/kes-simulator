@@ -100,7 +100,8 @@ function match(l) {
     case 'AND': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
-      const truey = registers[reg2] == 1 && registers[reg3] == 1; 
+      // const truey = registers[reg2] == 1 && registers[reg3] == 1; 
+      const truey = AND_OP(registers[reg2], registers[reg3]);
       ALU = truey ? 1 : 0;
       registers[reg1] = ALU;
       break;
@@ -108,7 +109,7 @@ function match(l) {
     case 'OR': {
       const [reg1, reg2, reg3] = values;
       validadeReg(reg1, reg2, reg3);
-      const truey = registers[reg2] == 1 || registers[reg3] == 1;
+      const truey = parseInt(registers[reg2]) > 0 || parseInt(registers[reg3]) > 0;
       ALU = truey ? 1 : 0;
       registers[reg1] = ALU;
       break;
@@ -174,4 +175,22 @@ function validateRecursion() {
     callstack = 0;
     error()
   }
+}
+
+function AND_OP(number1, number2) {
+  const int1 = Number.parseInt(number1)
+  const int2 = Number.parseInt(number2)
+  if(isNaN(int1) || isNaN(int2)) error();
+  const binary1 = int1.toString(2).padStart(16, '0')
+  const binary2 = int2.toString(2).padStart(16, '0')
+  
+  let returning = false
+  for(let i = 0; i < 8; i++) {
+    if(binary1[i] === '1') {
+      if(binary2[i] === '1') returning = true;
+      else returning = false; 
+    }
+  }
+
+  return returning;
 }
