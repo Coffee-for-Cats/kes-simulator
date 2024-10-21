@@ -26,3 +26,9 @@ Graças a essa professora consegui uma bolsa (SSP) e consegui me manter nos estu
 
 ## Projeto original
 https://users.dickinson.edu/~braught/kands/KandS2/machine.html
+
+
+## For devs:
+I recommend Biome.js lint on save.
+To build js:
+`bun build ./src/main.ts --outfile=script.js --watch`

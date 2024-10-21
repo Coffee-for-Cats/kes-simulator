@@ -1,0 +1,14 @@
+{
+	"dependencies": { "biome": "^0.3.3" },
+	"devDependencies": { "@biomejs/biome": "1.9.4" },
+	"name": "kes-simulator",
+	"version": "1.0.0",
+	"description": "\"Knob and Switch\" é um computador teórico utilizado para o aprendizado sobre arquitetura de computadores. O Simulador deste repositório interpreta o código (em texto) e executa as operações de maneira muito similar ao original. Tal implementação é atualmente utilizada para o ensino da primeira linguagem ASM do curso de Engenharia de Computação, na UERGS em Guaíba/RS.",
+	"main": "script.js",
+	"scripts": { 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @biomejs/biome init"
+  },
+	"author": "",
+	"license": "ISC"
+}

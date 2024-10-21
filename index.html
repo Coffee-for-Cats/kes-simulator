@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador K&S</title>
-  <script src="./src/main.js" defer></script>
-  <script src="./src/appearance.js" defer></script>
-  <script src="./src/interpreter.js" defer></script>
+  <script defer type="module" src="script.js"></script>
   <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
@@ -15,7 +13,7 @@
     <a target="_blank" href="https://github.com/Coffee-for-Cats">Lucas Schwalm</a>
   </address>
   <header id="var-placer">
-    PC: 0 | ALU: 0 | R0: 0 R1: 0 R2: 0 R3: 0
+    -- loading --
   </header>
   <main>
     <div class="editor">
@@ -31,16 +29,16 @@
     
   <div class="execute">
     <div class="buttons">
-      <button title="Resetar" onclick="reset()">
+      <button title="Resetar" id="reset_button">
         <img src="./src/icons/refresh.svg" alt="Resetar">
       </button>
-      <button title="Próximo" onclick="stepOnce()">
+      <button title="Próximo" id="next_button">
         <img src="./src/icons/skip_next.svg" alt="Próximo">
       </button>
-      <button title="Rodar" onclick="play()">
+      <button title="Rodar" id="play_button">
         <img src="./src/icons/play_arrow.svg" alt="Rodar">
       </button>
-      <button title="Pular para o fim" onclick="execute()">
+      <button title="Pular para o fim" id="exec_button">
         <img src="./src/icons/fast_forward.svg" alt="Executar">
       </button>
     </div>
